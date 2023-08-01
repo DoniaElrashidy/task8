@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        .container{
+            text-align: center;
+            height: 100vh;
+            position: relative;
+        }
+        .info{
+            position: absolute;
+            left: 27vw;
+            top: 25vh;
+        }
+        .info h1{
+            font-size: 55px;
+        }
+        body{
+           background: #dd5353;
+           color: white;
+           margin: 0;
+           padding: 0;
+           font-family: 'Press Start 2P', cursive;
+           overflow: hidden;     
+        }
+
+        .images{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .images img{
+            width: 100px;
+        }
+        #music{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+        }
+        #mario{
+            position: absolute;
+            transform: rotate(180deg);
+            width: 90px;
+            right: 40px;
+            /* margin-left: 500px; */
+        }
+        #minecraft{
+            position: absolute;
+            /* left: 0; */
+            top: 60px;
+            width: 450px;
+            left: -110px;
+            
+        }
+        #heart{
+            position: absolute;
+          
+        }
+        #giphy{
+            position: absolute;
+            top:150px;
+            margin-left: 150px;
+            width: 85px;
+        }
+        #hb{
+            position: absolute;
+            bottom: -210px;
+            width: 450px;
+            right: -100px;
+
+        }
+        input{
+            width: 450px;
+            padding: 15px;
+            margin-right: 20px;
+            border-radius: 30px;
+            border: none;
+           font-family: 'Press Start 2P', cursive;
+           background-color:rgba(255, 255, 255, 0.663);
+
+        }
+        .info img:hover{
+           background-image: url(images/on.png);
+           cursor: pointer;
+        }
+        .figure {
+    position: absolute;
+    width: 90px;
+    max-width: 100%;
+    bottom: 30px;
+    left: 475px;
+  }
+  .figure img.Sirv.image-hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity .2s;
+  }
+  .figure:hover img.Sirv.image-hover {
+    opacity: 1;
+  }
+  #hide{
+    padding:80px;
+    position: relative;
+    margin-right:100px;
+    background-color: rgba(127, 255, 212, 0);
+    border: none;
+    /* background-color: aquamarine; */
+  }
+  #warning{
+   position: absolute;
+   right: 50px;
+   top: 285px;
+   color: rgb(239, 185, 185);
+  }
+
+    </style>
+</head>
+<body>
+        <div class="container" >
+        <div class="info">
+            <form action="games.html" method="get" id="myform">
+            <h1>Welcome&nbsp;&nbsp; </h1>
+            <h3>please enter your email!</h3>
+           <input type="text" name="name" id="email-input" > 
+           <games></games>
+           <br><br>
+           <button type="submit" id="hide"></button>
+        </form>
+    <!-- <h1 id="result">your username is </h1>  -->
+    </div>
+    <div class="figure" >
+        <a href="games.html"> 
+        <img class="Sirv image-main" src="https://demo.sirv.com/hc.view?thumb=1&w=500" data-src="images/off.png">
+        <img class="Sirv image-hover" data-src="images/on.png" >
+     </a>
+     </div>
+     <h3 id="warning"></h3>
+    <div class="images">
+             <!-- <img src="images/music.gif" alt="" id="music"> -->
+             <img src="images/giphy.gif" alt="" id="giphy">
+             <img src="images/minecraft.gif" alt="" id="minecraft">
+             <img src="images/mario.gif" alt="" id="mario">
+             <img src="images/hb.gif" alt="" id="hb">
+
+    </div>
+    </div>
+    <script>
+        document.getElementById("myform").addEventListener("submit",function(event)
+        {
+            var emailinput = document.getElementById("email-input").value;
+            if (emailinput.indexOf("@")===-1){
+                event.preventDefault();
+                document.getElementById("warning").textContent="Invalid email";
+            }
+        })
+    </script>
+
+<script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>games</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background: #dd5353;
+            font-family: 'Press Start 2P', cursive;
+        }
+        .div-img{
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    padding-top:10%;
+    margin-top: -50px;
+}
+img{
+    transition: transform .2s;
+    width:15vw;
+    /* height:50px; */
+    margin:0 auto;
+    background-color: rgb(173, 173, 237);
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 30px;
+
+}
+    img:hover{
+    transform:scale(1.5);
+}
+#rock{
+    background-color: #00c8c8;
+}
+#tic{
+    background-color: #50206c;
+}
+#snake{
+    background-color: #e27f83;
+}
+h1{
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    margin-top: 60px;
+}
+h3{
+    text-align: center;
+    color: white;
+}
+    </style>
+</head>
+<body>
+        <h1>Hello <span style="text-transform: capitalize;"  id="result"></span> !</h1> 
+        <h3>Choose any game to play</h3>
+              <div class="div-img">
+                <div>
+              <a href="hangman.html"><img src='images/hang.png'></a>
+              <img src='images/rock.png' id="rock">
+            </div>
+            <div>
+              <img src='images/tic.png' id="tic">
+              <img src='images/snake.png' id="snake">
+              </div>
+       <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('name');
+        window.addEventListener('beforeunload',()=>{
+        sessionStorage.removeItem('name');
+        });
+        var x = username;
+        console.log(username)
+        console.log(x)
+        var z = x.indexOf("@");
+        result.textContent += " " + x.slice(0,z);
+
+      </script>
+</body>
+</html>
